@@ -1,0 +1,37 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.pickle
+
+# Virtual environments
+.env/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# -------------------------
+# Jupyter Notebooks
+# -------------------------
+.ipynb_checkpoints/
+.jupyter/
+
+# -------------------------
+# VS Code
+# -------------------------
+.vscode/
+
+# -------------------------
+# Data
+# -------------------------
+data/
+*.edf
+*.tsv
+*.json
+
+*.pdf

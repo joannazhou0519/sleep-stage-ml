@@ -1,0 +1,14 @@
+name: sleep-ml
+dependencies:
+  - python=3.11
+  - mne
+  - tqdm
+  - jupyterlab
+  - pyedflib
+  - scipy
+  - numpy
+  - scikit-learn
+  - pandas
+  - matplotlib
+  - ipykernel
+prefix: D:\Miniconda\Miniconda\envs\sleep-ml
