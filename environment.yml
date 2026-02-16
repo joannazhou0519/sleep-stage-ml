@@ -11,4 +11,5 @@ dependencies:
   - pandas
   - matplotlib
   - ipykernel
+  - neurokit2
 prefix: D:\Miniconda\Miniconda\envs\sleep-ml
