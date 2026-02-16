@@ -69,15 +69,7 @@ def compute_ppg_features(ppg_signal, sampling_rate, epoch_length=30):
             peak_vals = seg_clean[peaks]
             row["pulse_amp_mean"] = float(np.mean(peak_vals))
             row["pulse_amp_std"] = float(np.std(peak_vals))
-
-            if epoch == 0:
-                print(seg_clean)
-                print(peaks_dict)
-                print("peaks type:", type(peaks))
-                print("n_samples:", len(seg_clean), "n_peaks:", len(peaks))
-                print("first 10 peaks:", peaks)
-                print("first 10 IBI ms:", (np.diff(peaks) / sampling_rate * 1000.0)[:10])
-
+            
         except Exception as e:
             row["bad_epoch"] = True
             row["bad_reason"] = f"exception:{type(e).__name__}"
