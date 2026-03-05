@@ -43,7 +43,9 @@ OUT_ROOT = "data/features"
 LOG_PATH = Path(OUT_ROOT) / "dataset_cleaning.log"
 
 # Set SUBJECTS = None to process all sub-* under RAW_ROOT.
-SUBJECTS = ["sub-100", "sub-101", "sub-102"]
+# SUBJECTS = ["sub-100", "sub-101", "sub-102"]
+SUBJECT_INIT = 23
+SUBJECT_END = 125
 
 BAD_STAGES = (8, -2)
 
@@ -62,6 +64,9 @@ SPECTROGRAM_PARAMS = dict(
 # -------------------
 # helpers
 # -------------------
+
+def gen_subjects(start, end):
+    return [f"sub-{i}" for i in range(start, end + 1)]
 
 def make_logger(log_path, *, overwrite=True):
     log_path = Path(log_path)
@@ -196,17 +201,19 @@ def process_psg(subject, log):
 
 
 def main():
-    if SUBJECTS is None:
-        subjects = list_subjects(RAW_ROOT)
-    else:
-        subjects = SUBJECTS
+    # if SUBJECTS is None:
+    #     subjects = list_subjects(RAW_ROOT)
+    # else:
+    #     subjects = SUBJECTS
+
+    subjects = gen_subjects(SUBJECT_INIT, SUBJECT_END)
 
     log = make_logger(LOG_PATH, overwrite=True)
 
     log_run_header(log, {
         "RAW_ROOT": RAW_ROOT,
         "OUT_ROOT": OUT_ROOT,
-        "SUBJECTS": SUBJECTS if SUBJECTS is not None else "(all sub-*)",
+        "SUBJECTS": subjects if subjects is not None else "(all sub-*)",
         "BAD_STAGES": BAD_STAGES,
         "SPECTROGRAM_PARAMS": SPECTROGRAM_PARAMS,
     })

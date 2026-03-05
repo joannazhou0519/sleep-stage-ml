@@ -59,8 +59,7 @@ def pick_psg_eeg(raw):
     return raw2
 
 def pick_psg_ppg(raw):
-    if "PULSE" in raw.ch_names:
-        keep = ["PULSE"]
+    keep = [ch for ch in ["PSG_PULSE"] if ch in raw.ch_names]
     if not keep:
         raise ValueError(f"PPG channel not found. Available: {raw.ch_names}")
     raw2 = raw.copy().pick(keep)
