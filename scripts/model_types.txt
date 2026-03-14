@@ -1,0 +1,11 @@
+Approach 1:
+- Logistic Regression (with class weighting)
+- Linear SVM (one-vs-rest with class weighting)
+
+Approach 2:
+- Random Forest classifier
+
+Approach 3:
+- EEG branch: log-power spectrogram per epoch processed by a 2D CNN
+- PPG branch: PPG features processed by an MLP
+- Fusion of learned representations followed by classification
