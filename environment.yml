@@ -16,4 +16,6 @@ dependencies:
   - ipykernel
   - neurokit2
   - librosa
+  - pyarrow
+  - tensorflow
 prefix: D:\Miniconda\Miniconda\envs\sleep-ml
